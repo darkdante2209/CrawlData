@@ -12,6 +12,13 @@ BOT_NAME = 'FedEx'
 SPIDER_MODULES = ['FedEx.spiders']
 NEWSPIDER_MODULE = 'FedEx.spiders'
 
+# Playwright
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+
+TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'FedEx (+http://www.yourdomain.com)'
